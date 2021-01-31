@@ -2,7 +2,7 @@
 A wrapper module that handles fractions using `BigInteger`.
 
 ### Constructor
-Constructs a `Fraction` instance. Takes either two `int` variables, two `BigInteger` instances, or two `Fraction` instances.
+Constructs a `Fraction` instance. Takes either two `int` variables, two `BigInteger` instances, two `Fraction` instances, or a `BigDecimal` instance.
 ```java
 // construct a new fraction using integers -> "1/2"
 Fraction f1 = new Fraction(1, 2);
@@ -10,6 +10,8 @@ Fraction f1 = new Fraction(1, 2);
 Fraction f2 = new Fraction(BigInteger.valueOf(1), BigInteger.valueOf(2));
 // construct a new fraction using Fractions -> "1/2"
 Fraction f3 = new Fraction(new Fraction(1, 1), new Fraction(2, 1));
+// construct a new fraction using BigDecimal -> "1/2"
+Fraction f4 = new Fraction("0.5");
 ```
 
 #### .multiply()
