@@ -1,4 +1,6 @@
+import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Arrays;
 
 public class Fraction {
     static final BigInteger ZERO_BIG_INTEGER = BigInteger.valueOf(0);
@@ -17,6 +19,27 @@ public class Fraction {
         this.numerator = numerator;
         this.denominator = denominator;
         this.reduce();
+    }
+
+    // constructor that takes a BigDecimal
+    Fraction(BigDecimal decimal) {
+        String decimalString = decimal.toString();
+        
+        if(decimalString.contains(".")) {
+            String denominatorString = "1";
+            for (int i = 0; i < decimal.scale(); i++) {
+                denominatorString = denominatorString.concat("0");
+            }
+            this.numerator = decimal.unscaledValue();
+            this.denominator = new BigInteger(denominatorString);
+            this.reduce();
+
+        } else {
+            this.numerator = decimal.toBigInteger();
+            this.denominator = ONE_BIG_INTEGER;
+            this.reduce();
+        }
+
     }
 
     // constructor that takes two integers
