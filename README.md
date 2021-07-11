@@ -1,5 +1,5 @@
 ## JavaFraction
-A wrapper module that handles fractions using `BigInteger`.
+Java module that handles fractions using BigIntegers.
 
 ### Constructor
 Constructs a `Fraction` instance. Takes either two `int` variables, two `BigInteger` instances, two `Fraction` instances, or a `BigDecimal` instance.
